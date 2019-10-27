@@ -262,58 +262,58 @@ $(function () {
   /**
    * fancybox
    */
-  var imgList = $(".recent-post-info  img").not('.no-fancybox');
-  if (imgList.length === 0) {
-    imgList = $("#post-content img").not('.no-fancybox');
-  }
+  // var imgList = $(".recent-post-info  img").not('.no-fancybox');
+  // if (imgList.length === 0) {
+  //   imgList = $("#post-content img").not('.no-fancybox');
+  // }
 
-  for (var i = 0; i < imgList.length; i++) {
-    var lazyload_src = imgList[i].src ? imgList[i].src : imgList.eq(i).attr("data-src")
+  // for (var i = 0; i < imgList.length; i++) {
+  //   var lazyload_src = imgList[i].src ? imgList[i].src : imgList.eq(i).attr("data-src")
 
-    var $a = $(
-      '<a href="' +
-      lazyload_src +
-      '" data-fancybox="group" data-caption="' +
-      imgList[i].alt +
-      '" class="fancybox"></a>'
-    )
+  //   var $a = $(
+  //     '<a href="' +
+  //     lazyload_src +
+  //     '" data-fancybox="group" data-caption="' +
+  //     imgList[i].alt +
+  //     '" class="fancybox"></a>'
+  //   )
 
-    var alt = imgList[i].alt
-    var $wrap = $(imgList[i]).wrap($a)
-    if (alt) {
-      $wrap.after('<div class="img-alt">' + alt + '</div>')
-    }
-  }
-  $().fancybox({
-    selector: "[data-fancybox]",
-    loop: true,
-    transitionEffect: "slide",
-    protect: true,
-    // wheel: false,
-    buttons: ["slideShow", "fullScreen", "thumbs", "close"]
-  });
+  //   var alt = imgList[i].alt
+  //   var $wrap = $(imgList[i]).wrap($a)
+  //   if (alt) {
+  //     $wrap.after('<div class="img-alt">' + alt + '</div>')
+  //   }
+  // }
+  // $().fancybox({
+  //   selector: "[data-fancybox]",
+  //   loop: true,
+  //   transitionEffect: "slide",
+  //   protect: true,
+  //   // wheel: false,
+  //   buttons: ["slideShow", "fullScreen", "thumbs", "close"]
+  // });
 
-  var galleryItem = $(".gallery-item");
-  var galleryList = [];
-  galleryItem.each(function (idx, elem) {
-    galleryList.push({
-      src: $(elem).data("url"),
-      opts: {
-        caption: $(elem).data("title")
-      }
-    });
-  });
-  galleryItem.on("click", function () {
-    $.fancybox.open(
-      galleryList, {
-        loop: true,
-        transitionEffect: "slide"
-      },
-      galleryItem.index(this)
-    );
-    return false;
+  // var galleryItem = $(".gallery-item");
+  // var galleryList = [];
+  // galleryItem.each(function (idx, elem) {
+  //   galleryList.push({
+  //     src: $(elem).data("url"),
+  //     opts: {
+  //       caption: $(elem).data("title")
+  //     }
+  //   });
+  // });
+  // galleryItem.on("click", function () {
+  //   $.fancybox.open(
+  //     galleryList, {
+  //       loop: true,
+  //       transitionEffect: "slide"
+  //     },
+  //     galleryItem.index(this)
+  //   );
+  //   return false;
 
-  });
+  // });
 
   /**
    * 手機menu和toc按鈕點擊
